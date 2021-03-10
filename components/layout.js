@@ -7,23 +7,23 @@ import Link from 'next/link'
 const name = 'Toni Suwendi'
 export const siteTitle = 'Blog Toni Suwendi'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, descriptionSite, siteTitle }) {
   return (
     <div className={styles.container}>
       <Head>
+        <meta name="description" content={descriptionSite} />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content={siteTitle}/>
+        <meta property="og:description" content={descriptionSite} />
+        <meta property="og:url" content="https://tonisu-blog.vercel.app" />
+        <meta property="og:site_name" content={siteTitle} />
+        <meta property="og:image" content="/favicon.ico" />
+        <meta property="og:image:secure_url" content="/favicon.ico" />
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content={siteTitle} />
+        <meta name="twitter:description" content={descriptionSite} />
+        <meta name="twitter:image" content="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
         {home ? (

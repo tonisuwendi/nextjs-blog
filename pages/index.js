@@ -5,9 +5,11 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
+const description = "Blog Toni Suwendi using NextJS"
+
 export default function Home ({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout home descriptionSite={description}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
